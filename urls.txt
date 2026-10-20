@@ -1,0 +1,2 @@
+test-home-wire.png https://www.figma.com/api/mcp/asset/b4d9ae8f-20e5-4ecc-91da-55bfa5cf4b94.png
+test-home-hifi.png https://www.figma.com/api/mcp/asset/65eedfa0-506e-4a8c-bc53-e5cc5ad48426.png
