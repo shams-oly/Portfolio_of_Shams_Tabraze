@@ -2,6 +2,7 @@
 @import "@fontsource-variable/syne";
 @import "@fontsource-variable/manrope";
 @import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource-variable/outfit";
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
@@ -202,4 +203,20 @@ body {
   .grain::after {
     animation: none;
   }
+}
+
+/* Uniway case study */
+.font-uniway {
+  font-family: "Outfit Variable", var(--font-sans);
+}
+.u-orange {
+  color: #f37500;
+}
+.u-grid-bg {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.u-dots {
+  background-image: radial-gradient(var(--line) 1.2px, transparent 1.2px);
+  background-size: 18px 18px;
 }
