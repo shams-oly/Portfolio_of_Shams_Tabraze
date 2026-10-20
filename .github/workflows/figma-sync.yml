@@ -1,0 +1,27 @@
+name: figma-sync
+on:
+  push:
+    branches: [figma-sync]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download assets
+        run: |
+          mkdir -p assets
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            curl -sSfL --retry 3 -o "assets/$name" "$url" && echo "ok $name" || echo "FAIL $name"
+          done < urls.txt
+          ls -la assets
+      - name: Commit
+        run: |
+          git config user.name "figma-sync"
+          git config user.email "actions@github.com"
+          git add assets
+          git commit -m "Figma assets [skip ci]" || echo "nothing"
+          git push
