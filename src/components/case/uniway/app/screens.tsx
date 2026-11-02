@@ -30,7 +30,7 @@ function Splash() {
       <div className="grid-lines absolute inset-0 opacity-60" />
       <div className="absolute left-1/2 top-[38%] h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40 blur-3xl" style={{ background: "var(--grad)" }} />
       <div className="relative flex h-[700px] flex-col items-center justify-center">
-        <span className="clip-corner mb-6 flex h-20 w-20 items-center justify-center text-white" style={{ background: "var(--grad)" }}>
+        <span className="rounded-2xl mb-6 flex h-20 w-20 items-center justify-center text-white" style={{ background: "var(--grad)" }}>
           <svg viewBox="0 0 40 28" className="h-9 w-auto" aria-hidden>
             <path d="M20 2 38 9 20 16 2 9Z" fill="#fff" />
             <path d="M9 12v7c0 3 5 6 11 6s11-3 11-6v-7l-11 4.5Z" fill="#fff" opacity=".7" />
@@ -57,7 +57,7 @@ function Onboarding() {
         {UNIS.slice(0, 3).map((u, i) => (
           <div
             key={u.code}
-            className="clip-corner absolute left-1/2 w-[230px] border border-[var(--line)] bg-[var(--surface)] p-4 shadow-[0_24px_48px_-24px_rgba(0,0,0,.5)]"
+            className="rounded-2xl absolute left-1/2 w-[230px] border border-[var(--line)] bg-[var(--surface)] p-4 shadow-[0_24px_48px_-24px_rgba(0,0,0,.5)]"
             style={{ top: 30 + i * 92, transform: `translateX(-50%) rotate(${(i - 1) * -6}deg) translateX(${(i - 1) * 26}px)`, zIndex: 3 - i }}
           >
             <div className="flex items-center gap-3">
@@ -76,7 +76,7 @@ function Onboarding() {
       </div>
       <div className="px-7">
         <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--fg-3)]">01 / 03</p>
-        <h1 className="mt-2 font-display text-[34px] font-extrabold leading-[1.02] tracking-[-0.03em]">
+        <h1 className="mt-2 text-[34px] font-extrabold leading-[1.02] tracking-[-0.035em]">
           Universities that <span className="text-grad">fit you</span>, not the other way round.
         </h1>
         <p className="mt-3 text-[14px] leading-relaxed text-[var(--fg-2)]">Matched to your degree, budget and grades — with every requirement in one place.</p>
@@ -87,7 +87,7 @@ function Onboarding() {
           <span className="h-1.5 w-1.5 rounded-full bg-[var(--line)]" />
           <span className="h-1.5 w-1.5 rounded-full bg-[var(--line)]" />
         </span>
-        <span className="clip-corner-sm flex h-14 w-14 items-center justify-center text-white" style={{ background: "var(--grad)" }}>
+        <span className="rounded-xl flex h-14 w-14 items-center justify-center text-white" style={{ background: "var(--grad)" }}>
           <Icon n="arrow" s={22} w={2.2} />
         </span>
       </div>
@@ -111,7 +111,7 @@ function Questions() {
             <span key={i} className="h-1 flex-1 rounded-full" style={{ background: on ? "var(--grad)" : "var(--line)" }} />
           ))}
         </div>
-        <h1 className="mt-7 font-display text-[30px] font-extrabold leading-[1.05] tracking-[-0.03em]">What do you want to study?</h1>
+        <h1 className="mt-7 text-[30px] font-extrabold leading-[1.05] tracking-[-0.035em]">What do you want to study?</h1>
         <p className="mt-2 text-[13.5px] text-[var(--fg-2)]">We&apos;ll tailor universities, scholarships and events to this.</p>
 
         <p className="mt-7 text-[12px] font-bold uppercase tracking-wider text-[var(--fg-3)]">Degree</p>
@@ -158,7 +158,7 @@ function Home() {
       <div className="flex items-center justify-between px-5 pb-4 pt-2">
         <div>
           <p className="text-[12.5px] text-[var(--fg-3)]">Good evening</p>
-          <p className="font-display text-[24px] font-extrabold tracking-[-0.03em]">Hi, Edward 👋</p>
+          <p className="text-[24px] font-extrabold tracking-[-0.03em]">Hi, Edward 👋</p>
         </div>
         <span className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--line)]">
           <Icon n="bell" s={20} />
@@ -175,7 +175,7 @@ function Home() {
           </span>
           <span className="rounded-md bg-white/20 px-2 py-0.5 text-[10.5px] font-bold">Step 3 / 5</span>
         </div>
-        <p className="mt-3 font-display text-[21px] font-bold leading-tight">Stanford · MS Electrical Engineering</p>
+        <p className="mt-3 text-[21px] font-extrabold leading-tight">Harvard · MS Electrical Engineering</p>
         <p className="mt-1 text-[12.5px] text-white/80">Documents under expert review — 1 needs a fix</p>
         <div className="mt-4 flex gap-1.5">
           {[1, 1, 1, 0, 0].map((d, i) => (
@@ -189,7 +189,7 @@ function Home() {
         <div className="flex gap-3 overflow-hidden pl-5">
           {UNIS.slice(0, 3).map((u) => (
             <div key={u.code} className="w-[200px] shrink-0 overflow-hidden rounded-[20px] border border-[var(--line)] bg-[var(--surface)]">
-              <Campus hue={u.color} className="h-[104px]">
+              <Campus hue={u.color} src={u.photo} className="h-[104px]">
                 <span className="absolute left-3 top-3">
                   <Pill tone="lime">{u.match}% match</Pill>
                 </span>
@@ -210,19 +210,27 @@ function Home() {
 
       <div className="mt-7">
         <SectionTitle>Scholarships by test</SectionTitle>
-        <div className="grid grid-cols-5 gap-2 px-5">
+        <div className="flex gap-2.5 overflow-hidden pl-5">
           {[
-            ["ECA", "#8b3dff"],
-            ["IELTS", "#ff3d8b"],
-            ["GRE", "#2f6bff"],
-            ["GMAT", "#14b8a6"],
-            ["SAT", "#f59e0b"],
-          ].map(([t, c]) => (
-            <div key={t} className="flex flex-col items-center gap-2">
-              <span className="clip-corner-sm flex h-14 w-full items-center justify-center font-display text-[13px] font-extrabold" style={{ background: `${c}22`, color: c }}>
-                {t}
-              </span>
-              <span className="text-[10.5px] font-semibold text-[var(--fg-3)]">{t === "ECA" ? "Activity" : "Test"}</span>
+            ["ECA based", "Activities", 48],
+            ["IELTS", "English", 126],
+            ["GRE", "Graduate", 74],
+            ["GMAT", "Business", 39],
+            ["SAT", "Undergrad", 52],
+          ].map(([t, sub, n], k) => (
+            <div key={t as string} className="w-[112px] shrink-0 rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-3">
+              <div className="flex h-9 items-center">
+                {k === 0 ? (
+                  <span className="flex h-7 items-center rounded-md bg-white px-1.5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/case/uniway/eca-logo.png" alt="ECA" className="h-3.5 w-auto" />
+                  </span>
+                ) : (
+                  <span className="text-[17px] font-extrabold tracking-tight">{t as string}</span>
+                )}
+              </div>
+              <p className="mt-1 text-[11px] text-[var(--fg-3)]">{sub as string}</p>
+              <p className="mt-2 text-[12px] font-bold">{n as number} awards</p>
             </div>
           ))}
         </div>
@@ -231,28 +239,24 @@ function Home() {
       <div className="mt-7">
         <SectionTitle>Upcoming ECAs</SectionTitle>
         <div className="mx-5 flex gap-4 rounded-[20px] border border-[var(--line)] bg-[var(--surface)] p-4">
-          <div className="clip-corner-sm flex w-16 shrink-0 flex-col items-center justify-center bg-[var(--fg)] py-2 text-[var(--bg)]">
-            <span className="font-display text-[24px] font-extrabold leading-none">18</span>
-            <span className="text-[10px] font-bold uppercase">Dec</span>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/case/uniway/eca-olympiad.jpg" alt="" className="h-[72px] w-[72px] shrink-0 rounded-xl object-cover" />
           <div className="min-w-0 flex-1">
             <Pill tone="violet">Olympiad</Pill>
             <p className="mt-1.5 text-[14px] font-bold leading-snug">National Mathematical Olympiad 2026</p>
             <p className="mt-1 flex items-center gap-1 text-[11.5px] text-[var(--fg-3)]">
-              <Icon n="pin" s={12} /> Dhaka · Free entry
+              <Icon n="cal" s={12} /> Dec 18 · Dhaka · Free entry
             </p>
           </div>
         </div>
         <div className="mx-5 mt-3 flex gap-4 rounded-[20px] border border-[var(--line)] bg-[var(--surface)] p-4">
-          <div className="clip-corner-sm flex w-16 shrink-0 flex-col items-center justify-center bg-[var(--bg-2)] py-2">
-            <span className="font-display text-[24px] font-extrabold leading-none">04</span>
-            <span className="text-[10px] font-bold uppercase text-[var(--fg-3)]">Jan</span>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/case/uniway/eca-math.jpg" alt="" className="h-[72px] w-[72px] shrink-0 rounded-xl object-cover" />
           <div className="min-w-0 flex-1">
             <Pill tone="blue">Online</Pill>
             <p className="mt-1.5 text-[14px] font-bold leading-snug">Writing an SOP that gets read</p>
             <p className="mt-1 flex items-center gap-1 text-[11.5px] text-[var(--fg-3)]">
-              <Icon n="video" s={12} /> Live with 2 admissions experts
+              <Icon n="cal" s={12} /> Jan 4 · Online · 2 experts
             </p>
           </div>
         </div>
@@ -286,7 +290,7 @@ function Filters() {
       <div className="absolute inset-x-0 bottom-0 h-[560px] rounded-t-[30px] border-t border-[var(--line)] bg-[var(--surface)] px-6 pt-3 shadow-[0_-30px_60px_-20px_rgba(0,0,0,.4)]">
         <span className="mx-auto block h-1 w-10 rounded-full bg-[var(--line)]" />
         <div className="mt-4 flex items-center justify-between">
-          <p className="font-display text-[20px] font-bold">Filters</p>
+          <p className="text-[20px] font-extrabold">Filters</p>
           <span className="text-[13px] font-semibold text-[var(--fg-3)]">Reset</span>
         </div>
         <p className="mt-5 text-[12px] font-bold uppercase tracking-wider text-[var(--fg-3)]">Country</p>
@@ -329,7 +333,7 @@ function University() {
   const u = UNIS[0];
   return (
     <Screen h={1240}>
-      <Campus hue={u.color} className="absolute inset-x-0 top-0 h-[270px]" />
+      <Campus hue={u.color} src={u.photo} className="absolute inset-x-0 top-0 h-[270px]" />
       <div className="relative">
         <div className="flex justify-between px-5 pt-1 text-white">
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-black/25 backdrop-blur">
@@ -345,7 +349,7 @@ function University() {
           </span>
           <div className="flex items-start justify-between">
             <div>
-              <p className="font-display text-[22px] font-extrabold leading-tight tracking-[-0.02em]">{u.name}</p>
+              <p className="text-[22px] font-extrabold leading-tight tracking-[-0.02em]">{u.name}</p>
               <p className="mt-1 flex items-center gap-1 text-[12px] text-[var(--fg-3)]">
                 <Icon n="pin" s={12} /> {u.place}
               </p>
@@ -359,7 +363,7 @@ function University() {
               ["Deadline", "Dec 1"],
             ].map(([k, v]) => (
               <div key={k}>
-                <p className="font-display text-[16px] font-bold">{v}</p>
+                <p className="text-[16px] font-extrabold">{v}</p>
                 <p className="text-[10.5px] text-[var(--fg-3)]">{k}</p>
               </div>
             ))}
@@ -375,10 +379,10 @@ function University() {
         </div>
         <div className="px-5 pt-5">
           <p className="text-[13.5px] leading-relaxed text-[var(--fg-2)]">
-            A private research university in Silicon Valley, known for engineering, entrepreneurship and a campus culture that blurs the line
-            between lab and startup.
+            One of the oldest universities in the US, with a strong engineering school, deep research funding and a historic campus in
+            Cambridge, Massachusetts.
           </p>
-          <p className="mt-6 font-display text-[16px] font-bold">What you&apos;ll need</p>
+          <p className="mt-6 text-[16px] font-extrabold">What you&apos;ll need</p>
           <div className="mt-3 space-y-2">
             {[
               ["Transcripts", true],
@@ -399,11 +403,11 @@ function University() {
               </div>
             ))}
           </div>
-          <p className="mt-6 font-display text-[16px] font-bold">Campus</p>
+          <p className="mt-6 text-[16px] font-extrabold">Campus</p>
           <div className="mt-3 grid grid-cols-3 gap-2">
-            <Campus hue="#2f6bff" className="clip-corner-sm h-24" />
-            <Campus hue="#8b3dff" className="clip-corner-sm h-24" />
-            <Campus hue="#ff3d8b" className="clip-corner-sm h-24" />
+            <Campus src="/case/uniway/campus-harvard.jpg" pos="20% 60%" className="h-24 rounded-xl" />
+            <Campus src="/case/uniway/campus-harvard.jpg" pos="80% 40%" className="h-24 rounded-xl" />
+            <Campus src="/case/uniway/campus-toronto.jpg" pos="50% 30%" className="h-24 rounded-xl" />
           </div>
         </div>
       </div>
@@ -443,10 +447,10 @@ function Documents() {
               </linearGradient>
             </defs>
           </svg>
-          <span className="absolute inset-0 flex items-center justify-center font-display text-[15px] font-extrabold">3/6</span>
+          <span className="absolute inset-0 flex items-center justify-center text-[15px] font-extrabold">3/6</span>
         </div>
         <div>
-          <p className="font-display text-[17px] font-bold">Stanford · MS EE</p>
+          <p className="text-[17px] font-extrabold">Harvard · MS EE</p>
           <p className="text-[12px] text-[var(--fg-3)]">Reviewed by an expert within 24h</p>
         </div>
       </div>
@@ -462,7 +466,7 @@ function Documents() {
                 <Pill tone={tone[d.s][0]}>{tone[d.s][1]}</Pill>
               </div>
               {d.s === "missing" ? (
-                <span className="clip-corner-sm flex h-9 items-center gap-1 px-3 text-[12px] font-bold text-white" style={{ background: "var(--grad)" }}>
+                <span className="rounded-xl flex h-9 items-center gap-1 px-3 text-[12px] font-bold text-white" style={{ background: "var(--grad)" }}>
                   <Icon n="upload" s={14} w={2.2} /> Upload
                 </span>
               ) : (
@@ -489,7 +493,7 @@ function Scholarships() {
   return (
     <Screen h={1020} tab={1}>
       <div className="px-5 pb-3 pt-2">
-        <p className="font-display text-[28px] font-extrabold tracking-[-0.03em]">Scholarships</p>
+        <p className="text-[28px] font-extrabold tracking-[-0.035em]">Scholarships</p>
         <p className="text-[12.5px] text-[var(--fg-3)]">Filtered for Masters · EEE · USA, Canada</p>
       </div>
       <div className="flex gap-2 overflow-hidden px-5">
@@ -506,7 +510,7 @@ function Scholarships() {
             <Pill tone="lime">Fully funded</Pill>
             <span className="text-[11.5px] font-semibold opacity-70">Closes in 12 days</span>
           </div>
-          <p className="mt-4 font-display text-[22px] font-bold leading-tight">Fulbright Foreign Student Program</p>
+          <p className="mt-4 text-[22px] font-extrabold leading-tight">Fulbright Foreign Student Program</p>
           <p className="mt-1 text-[12.5px] opacity-70">Tuition, living stipend, airfare & health cover</p>
           <div className="mt-4 flex items-center justify-between">
             <div className="flex -space-x-2">
@@ -536,7 +540,7 @@ function Scholarships() {
                 <p className="mt-1.5 truncate text-[13.5px] font-bold">{t}</p>
                 <p className="text-[11.5px] text-[var(--fg-3)]">{u}</p>
               </div>
-              <span className="font-display text-[15px] font-bold">{amt}</span>
+              <span className="text-[15px] font-extrabold">{amt}</span>
             </div>
           ))}
         </div>
@@ -550,7 +554,7 @@ function Events() {
   return (
     <Screen h={1000} tab={1}>
       <div className="flex items-center justify-between px-5 pb-3 pt-2">
-        <p className="font-display text-[28px] font-extrabold tracking-[-0.03em]">Events</p>
+        <p className="text-[28px] font-extrabold tracking-[-0.035em]">Events</p>
         <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--line)]">
           <Icon n="search" />
         </span>
@@ -564,20 +568,20 @@ function Events() {
       </div>
       <div className="mt-5 space-y-4 px-5">
         {[
-          { d: "18", m: "Dec", t: "National Mathematical Olympiad 2026", tag: "Olympiad", tone: "violet", where: "Dhaka · Offline", hue: "#8b3dff", seats: "312 going" },
-          { d: "04", m: "Jan", t: "Writing an SOP that gets read", tag: "Workshop", tone: "blue", where: "Online · Live", hue: "#2f6bff", seats: "1.2k going" },
-          { d: "21", m: "Jan", t: "Study in Germany Virtual Fair", tag: "Fair", tone: "pink", where: "Online · 40 universities", hue: "#ff3d8b", seats: "860 going" },
+          { d: "18", m: "Dec", t: "National Mathematical Olympiad 2026", tag: "Olympiad", tone: "violet", where: "Dhaka · Offline", hue: "#8b3dff", seats: "312 going", img: "/case/uniway/eca-olympiad.jpg" },
+          { d: "04", m: "Jan", t: "Writing an SOP that gets read", tag: "Workshop", tone: "blue", where: "Online · Live", hue: "#2f6bff", seats: "1.2k going", img: "/case/uniway/eca-math.jpg" },
+          { d: "21", m: "Jan", t: "Study in Germany Virtual Fair", tag: "Fair", tone: "pink", where: "Online · 40 universities", hue: "#ff3d8b", seats: "860 going", img: "/case/uniway/campus-toronto.jpg" },
         ].map((e, i) => (
           <div key={e.t} className="overflow-hidden rounded-[22px] border border-[var(--line)] bg-[var(--surface)]">
             {i === 0 && (
-              <Campus hue={e.hue} className="h-[120px]">
+              <Campus hue={e.hue} src={e.img} className="h-[120px]">
                 <span className="absolute bottom-3 left-3 rounded-md bg-black/40 px-2 py-1 text-[11px] font-bold text-white backdrop-blur">{e.seats}</span>
               </Campus>
             )}
             <div className="flex gap-4 p-4">
-              <div className="clip-corner-sm flex w-14 shrink-0 flex-col items-center justify-center py-2 text-white" style={{ background: e.hue }}>
-                <span className="font-display text-[22px] font-extrabold leading-none">{e.d}</span>
-                <span className="text-[10px] font-bold uppercase">{e.m}</span>
+              <div className="flex w-12 shrink-0 flex-col items-center justify-center rounded-xl border border-[var(--line)] py-1.5">
+                <span className="text-[18px] font-extrabold leading-none">{e.d}</span>
+                <span className="mt-0.5 text-[10px] font-bold uppercase text-[var(--fg-3)]">{e.m}</span>
               </div>
               <div className="min-w-0 flex-1">
                 <Pill tone={e.tone as "violet"}>{e.tag}</Pill>
@@ -659,8 +663,8 @@ function Community() {
   return (
     <Screen h={1000} tab={3}>
       <div className="flex items-center justify-between px-5 pb-3 pt-2">
-        <p className="font-display text-[28px] font-extrabold tracking-[-0.03em]">Community</p>
-        <span className="clip-corner-sm flex h-10 items-center gap-1 px-3 text-[12.5px] font-bold text-white" style={{ background: "var(--grad)" }}>
+        <p className="text-[28px] font-extrabold tracking-[-0.035em]">Community</p>
+        <span className="rounded-xl flex h-10 items-center gap-1 px-3 text-[12.5px] font-bold text-white" style={{ background: "var(--grad)" }}>
           <Icon n="plus" s={15} w={2.4} /> Ask
         </span>
       </div>
@@ -720,15 +724,15 @@ function Confirmed() {
     <Screen>
       <div className="grid-lines absolute inset-0 opacity-50" />
       <div className="relative flex flex-col items-center px-7 pt-20 text-center">
-        <span className="clip-corner flex h-24 w-24 items-center justify-center text-white" style={{ background: "var(--grad)" }}>
+        <span className="rounded-2xl flex h-24 w-24 items-center justify-center text-white" style={{ background: "var(--grad)" }}>
           <Icon n="check" s={44} w={2.6} />
         </span>
-        <p className="mt-7 font-display text-[30px] font-extrabold leading-[1.05] tracking-[-0.03em]">You&apos;re booked.</p>
+        <p className="mt-7 text-[30px] font-extrabold leading-[1.05] tracking-[-0.035em]">You&apos;re booked.</p>
         <p className="mt-2 text-[13.5px] text-[var(--fg-2)]">An expert will review your transcript fix and plan your next steps with you.</p>
       </div>
-      <div className="clip-corner relative mx-6 mt-8 border border-[var(--line)] bg-[var(--surface)] p-5">
+      <div className="rounded-2xl relative mx-6 mt-8 border border-[var(--line)] bg-[var(--surface)] p-5">
         <div className="flex items-center gap-3">
-          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--fg)] font-display text-[15px] font-bold text-[var(--bg)]">AR</span>
+          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--fg)] text-[15px] font-extrabold text-[var(--bg)]">AR</span>
           <div>
             <p className="text-[14.5px] font-bold">Anika Rahman</p>
             <p className="text-[12px] text-[var(--fg-3)]">Admissions expert · US & Canada</p>
@@ -761,17 +765,17 @@ function Profile() {
   return (
     <Screen tab={4}>
       <div className="flex items-center justify-between px-5 pt-2">
-        <p className="font-display text-[28px] font-extrabold tracking-[-0.03em]">Profile</p>
+        <p className="text-[28px] font-extrabold tracking-[-0.035em]">Profile</p>
         <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--line)]">
           <Icon n="cog" />
         </span>
       </div>
       <div className="mx-5 mt-4 flex items-center gap-4">
-        <span className="clip-corner flex h-[72px] w-[72px] items-center justify-center font-display text-[24px] font-extrabold text-white" style={{ background: "var(--grad)" }}>
+        <span className="rounded-2xl flex h-[72px] w-[72px] items-center justify-center text-[24px] font-extrabold text-white" style={{ background: "var(--grad)" }}>
           ED
         </span>
         <div>
-          <p className="font-display text-[20px] font-bold">Edward Rahman</p>
+          <p className="text-[20px] font-extrabold">Edward Rahman</p>
           <p className="text-[12.5px] text-[var(--fg-3)]">Masters · EEE · Dhaka</p>
           <span className="mt-1 inline-block">
             <Pill tone="lime">Profile 80% complete</Pill>
@@ -785,7 +789,7 @@ function Profile() {
           ["5", "Events"],
         ].map(([v, k]) => (
           <div key={k} className="rounded-2xl border border-[var(--line)] bg-[var(--surface)] py-4 text-center">
-            <p className="font-display text-[24px] font-extrabold">{v}</p>
+            <p className="text-[24px] font-extrabold">{v}</p>
             <p className="text-[11.5px] text-[var(--fg-3)]">{k}</p>
           </div>
         ))}

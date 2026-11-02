@@ -233,7 +233,7 @@ function ThenNow() {
               <Swatch key={c.hex} {...c} i={i} />
             ))}
           </div>
-          <div className="clip-corner-sm relative mt-3 h-10" style={{ background: "var(--grad)" }}>
+          <div className="rounded-xl relative mt-3 h-10" style={{ background: "var(--grad)" }}>
             <span className="absolute inset-0 flex items-center justify-between px-4 font-mono text-[11px] font-semibold text-white">
               <span>#2F6BFF</span>
               <span>Signature gradient</span>
@@ -325,7 +325,7 @@ function LiveComponents() {
           {NAV.map((n, i) => (
             <button key={n} onClick={() => setTab(i)} className="relative flex h-10 items-center justify-center px-2 text-xs font-bold">
               {tab === i && (
-                <motion.span layoutId="navpill" className="clip-corner-sm absolute inset-0" style={{ background: "var(--grad)" }} transition={{ type: "spring", stiffness: 500, damping: 36 }} />
+                <motion.span layoutId="navpill" className="rounded-xl absolute inset-0" style={{ background: "var(--grad)" }} transition={{ type: "spring", stiffness: 500, damping: 36 }} />
               )}
               <span className={`relative ${tab === i ? "px-1.5 text-white" : "text-[var(--fg-3)]"}`}>{tab === i ? n : n[0]}</span>
             </button>

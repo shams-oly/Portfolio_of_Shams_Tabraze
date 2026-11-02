@@ -31,7 +31,7 @@ export function ChapterHead({
         {n}
       </motion.span>
       <p className="label relative mb-5 flex items-center gap-3">
-        <span className="inline-block h-2 w-2 bg-[var(--u)] clip-corner-sm" />
+        <span className="inline-block h-2 w-2 bg-[var(--u)] rounded-xl" />
         {n} · {eyebrow}
       </p>
       <SplitReveal

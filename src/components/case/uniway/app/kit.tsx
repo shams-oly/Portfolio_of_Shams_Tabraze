@@ -77,7 +77,7 @@ export function TabBar({ active = 0 }: { active?: number }) {
     <div className="absolute inset-x-3 bottom-4 z-20 flex items-center justify-between rounded-[22px] border border-[var(--line)] bg-[var(--surface)]/90 px-2 py-2 shadow-[0_16px_40px_-18px_rgba(0,0,0,.45)] backdrop-blur-xl">
       {TABS.map(([icon, label], i) =>
         i === active ? (
-          <span key={label} className="clip-corner-sm flex items-center gap-1.5 px-3.5 py-2 text-[12px] font-bold text-white" style={{ background: "var(--grad)" }}>
+          <span key={label} className="rounded-xl flex items-center gap-1.5 px-3.5 py-2 text-[12px] font-bold text-white" style={{ background: "var(--grad)" }}>
             <Icon n={icon} s={16} w={2.2} />
             {label}
           </span>
@@ -95,8 +95,8 @@ export function TabBar({ active = 0 }: { active?: number }) {
 export function Crest({ code, color, size = 44 }: { code: string; color: string; size?: number }) {
   return (
     <span
-      className="clip-corner-sm flex shrink-0 items-center justify-center font-display font-extrabold text-white"
-      style={{ width: size, height: size, background: `linear-gradient(140deg, ${color}, ${color}cc 60%, #0d0d12)`, fontSize: size * 0.34 }}
+      className="flex shrink-0 items-center justify-center rounded-full font-sans font-extrabold text-white ring-2 ring-[var(--surface)]"
+      style={{ width: size, height: size, background: color, fontSize: size * 0.32 }}
     >
       {code}
     </span>
@@ -140,7 +140,7 @@ export function Header({ title, back = true, right }: { title: string; back?: bo
   return (
     <div className="flex items-center justify-between px-5 pb-3 pt-1">
       <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--line)]">{back && <Icon n="chevL" />}</span>
-      <span className="font-display text-[17px] font-bold tracking-tight">{title}</span>
+      <span className="text-[17px] font-extrabold tracking-tight">{title}</span>
       <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--line)]">{right}</span>
     </div>
   );
@@ -149,7 +149,7 @@ export function Header({ title, back = true, right }: { title: string; back?: bo
 export function SectionTitle({ children, action = "See all" }: { children: ReactNode; action?: string | null }) {
   return (
     <div className="mb-3 flex items-baseline justify-between px-5">
-      <span className="font-display text-[17px] font-bold tracking-tight">{children}</span>
+      <span className="text-[17px] font-extrabold tracking-tight">{children}</span>
       {action && <span className="text-[12px] font-semibold text-[var(--fg-3)]">{action} →</span>}
     </div>
   );
@@ -163,7 +163,7 @@ export function Search({ text = "Universities, courses, scholarships…", typed 
         <span className={`flex-1 truncate text-[13.5px] ${typed ? "font-semibold" : "text-[var(--fg-3)]"}`}>{text}</span>
         <Icon n="mic" s={18} className="text-[var(--fg-3)]" />
       </div>
-      <span className="clip-corner-sm flex h-12 w-12 shrink-0 items-center justify-center text-white" style={{ background: "var(--grad)" }}>
+      <span className="rounded-xl flex h-12 w-12 shrink-0 items-center justify-center text-white" style={{ background: "var(--grad)" }}>
         <Icon n="filter" s={20} w={2.2} />
       </span>
     </div>
@@ -171,29 +171,37 @@ export function Search({ text = "Universities, courses, scholarships…", typed 
 }
 
 /** Abstract campus artwork (no photos needed). */
-export function Campus({ hue = "#8b3dff", className = "", children }: { hue?: string; className?: string; children?: ReactNode }) {
+export function Campus({
+  hue = "#8b3dff",
+  src,
+  pos = "center",
+  className = "",
+  children,
+}: {
+  hue?: string;
+  src?: string;
+  pos?: string;
+  className?: string;
+  children?: ReactNode;
+}) {
+  const abs = /(^|\s)(absolute|fixed)(\s|$)/.test(className);
   return (
-    <div className={`overflow-hidden ${/(^|\s)(absolute|fixed)(\s|$)/.test(className) ? "" : "relative"} ${className}`} style={{ background: `linear-gradient(160deg, ${hue}, #0d0d12)` }}>
-      <svg viewBox="0 0 200 120" className="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMax slice" aria-hidden>
-        <circle cx="160" cy="28" r="14" fill="#fff" opacity=".18" />
-        <path d="M0 120V82l30-10 20 8 30-22 26 14 22-30 30 22 42-12v68z" fill="#fff" opacity=".08" />
-        <path d="M60 120V70h80v50" fill="#fff" opacity=".14" />
-        <path d="M54 72 100 44l46 28z" fill="#fff" opacity=".22" />
-        <path d="M95 44V28h10v16" fill="#fff" opacity=".22" />
-        {[70, 86, 102, 118].map((x) => (
-          <rect key={x} x={x} y="80" width="8" height="40" fill="#fff" opacity=".18" />
-        ))}
-      </svg>
+    <div className={`overflow-hidden ${abs ? "" : "relative"} ${className}`} style={{ background: `linear-gradient(160deg, ${hue}, #0d0d12)` }}>
+      {src && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={src} alt="" className="absolute inset-0 h-full w-full object-cover" style={{ objectPosition: pos }} />
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
       {children}
     </div>
   );
 }
 
 export const UNIS = [
-  { name: "Stanford University", short: "Stanford", code: "SU", place: "Stanford, USA", color: "#8C1515", fee: "$58k", match: 92 },
-  { name: "University of Toronto", short: "Toronto", code: "UT", place: "Toronto, Canada", color: "#1E3765", fee: "C$61k", match: 88 },
-  { name: "Harvard University", short: "Harvard", code: "HU", place: "Cambridge, USA", color: "#A51C30", fee: "$59k", match: 84 },
-  { name: "University of Oxford", short: "Oxford", code: "OX", place: "Oxford, UK", color: "#002147", fee: "£39k", match: 81 },
-  { name: "McGill University", short: "McGill", code: "MG", place: "Montréal, Canada", color: "#ED1B2F", fee: "C$45k", match: 79 },
-  { name: "TU Munich", short: "TUM", code: "TU", place: "Munich, Germany", color: "#3070B3", fee: "€6k", match: 77 },
+  { name: "Harvard University", short: "Harvard", code: "HU", place: "Cambridge, USA", color: "#A51C30", fee: "$59k", match: 92, photo: "/case/uniway/campus-harvard.jpg" },
+  { name: "University of Toronto", short: "Toronto", code: "UT", place: "Toronto, Canada", color: "#1E3765", fee: "C$61k", match: 88, photo: "/case/uniway/campus-toronto.jpg" },
+  { name: "Stanford University", short: "Stanford", code: "SU", place: "Stanford, USA", color: "#8C1515", fee: "$58k", match: 84, photo: undefined },
+  { name: "University of Oxford", short: "Oxford", code: "OX", place: "Oxford, UK", color: "#002147", fee: "£39k", match: 81, photo: undefined },
+  { name: "McGill University", short: "McGill", code: "MG", place: "Montréal, Canada", color: "#ED1B2F", fee: "C$45k", match: 79, photo: undefined },
+  { name: "TU Munich", short: "TUM", code: "TU", place: "Munich, Germany", color: "#3070B3", fee: "€6k", match: 77, photo: undefined },
 ];
