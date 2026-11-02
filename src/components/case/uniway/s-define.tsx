@@ -26,7 +26,7 @@ function ProblemToHypothesis() {
           ))}
         </ol>
       </div>
-      <div className="relative overflow-hidden rounded-[2rem] bg-[#F37500] p-8 text-white">
+      <div className="relative overflow-hidden rounded-[2rem] bg-grad p-8 text-white">
         <div className="u-grid-bg absolute inset-0 opacity-30" />
         <p className="relative mb-6 font-mono text-xs uppercase tracking-[0.2em] text-white/80">We believe that…</p>
         <ol className="relative space-y-5">
@@ -39,7 +39,7 @@ function ProblemToHypothesis() {
               transition={{ delay: 0.15 + i * 0.08, ease: EASE_OUT, duration: 0.7 }}
               className="flex gap-4"
             >
-              <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-xs font-bold text-[#F37500]">
+              <span className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-xs font-bold text-[var(--u)]">
                 {i + 1}
               </span>
               <span className="font-medium leading-relaxed">{h}</span>
@@ -74,9 +74,9 @@ function Goals() {
         <div className="container-x mb-10 flex items-end justify-between gap-6">
           <div>
             <p className="label mb-3">Goal statements</p>
-            <p className="font-uniway text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[0.95]">Seven promises, each with a metric.</p>
+            <p className="font-display text-[clamp(2rem,4.4vw,4rem)] font-bold leading-[0.95]">Seven promises, each with a metric.</p>
           </div>
-          <p className="font-uniway text-5xl font-black text-[#F37500] tabular-nums">
+          <p className="font-display text-5xl font-black text-[var(--u)] tabular-nums">
             {String(active + 1).padStart(2, "0")}
             <span className="text-[var(--line)]">/07</span>
           </p>
@@ -86,17 +86,17 @@ function Goals() {
             <div
               key={g.title}
               className={`flex h-[42vh] min-h-[300px] w-[78vw] shrink-0 flex-col justify-between rounded-[2rem] p-8 transition-colors duration-500 sm:w-[420px] ${
-                i === active ? "bg-[#F37500] text-white" : "border border-[var(--line)] bg-[var(--surface)]"
+                i === active ? "bg-grad text-white" : "border border-[var(--line)] bg-[var(--surface)]"
               }`}
             >
               <span
-                className="font-uniway text-[7rem] font-black leading-none"
-                style={{ WebkitTextStroke: i === active ? "2px rgba(255,255,255,.7)" : "2px #F37500", color: "transparent" }}
+                className="font-display text-[7rem] font-black leading-none"
+                style={{ WebkitTextStroke: i === active ? "2px rgba(255,255,255,.7)" : "2px var(--u)", color: "transparent" }}
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
-                <p className="font-uniway text-2xl font-bold">{g.title}</p>
+                <p className="font-display text-2xl font-bold">{g.title}</p>
                 <p className={`mt-2 leading-relaxed ${i === active ? "text-white/85" : "text-[var(--fg-2)]"}`}>{g.text}</p>
               </div>
             </div>
@@ -126,9 +126,9 @@ export { Goals as DefineGoals };
 /* ---------- Ideate: core flow + IA ---------- */
 
 const KIND: Record<string, string> = {
-  node: "rounded-full bg-[#F37500] text-white",
-  step: "rounded-2xl border-2 border-[#F37500] bg-[var(--surface)]",
-  decision: "rotate-45 bg-[#F37500] text-white",
+  node: "rounded-full bg-[var(--u)] text-white",
+  step: "rounded-2xl border-2 border-[var(--u)] bg-[var(--surface)]",
+  decision: "rotate-45 bg-[var(--u)] text-white",
   end: "rounded-2xl bg-[var(--fg)] text-[var(--bg)]",
 };
 
@@ -136,7 +136,7 @@ function CoreFlow() {
   return (
     <div className="mt-[8vh] rounded-[2rem] border border-[var(--line)] bg-[var(--surface)] p-6 md:p-10">
       <div className="mb-8 flex flex-wrap items-baseline justify-between gap-3">
-        <p className="font-uniway text-2xl font-bold">Core flow · Apply with confidence</p>
+        <p className="font-display text-2xl font-bold">Core flow · Apply with confidence</p>
         <p className="label">University → documents → expert</p>
       </div>
       <div className="flex flex-wrap items-center gap-y-8">
@@ -157,7 +157,7 @@ function CoreFlow() {
               <svg width="52" height="12" viewBox="0 0 52 12" className="mx-1 shrink-0">
                 <motion.path
                   d="M2 6 H44"
-                  stroke="#F37500"
+                  stroke="var(--u)"
                   strokeWidth="2"
                   strokeDasharray="4 4"
                   fill="none"
@@ -168,7 +168,7 @@ function CoreFlow() {
                 />
                 <motion.path
                   d="M42 1 L50 6 L42 11"
-                  stroke="#F37500"
+                  stroke="var(--u)"
                   strokeWidth="2"
                   fill="none"
                   initial={{ opacity: 0 }}
@@ -182,9 +182,9 @@ function CoreFlow() {
         ))}
       </div>
       <div className="mt-8 flex flex-wrap gap-4 text-xs text-[var(--fg-3)]">
-        <span className="flex items-center gap-2"><span className="h-3 w-3 rounded-full bg-[#F37500]" /> Action</span>
-        <span className="flex items-center gap-2"><span className="h-3 w-3 rounded border-2 border-[#F37500]" /> Screen</span>
-        <span className="flex items-center gap-2"><span className="h-3 w-3 rotate-45 bg-[#F37500]" /> Decision</span>
+        <span className="flex items-center gap-2"><span className="h-3 w-3 rounded-full bg-[var(--u)]" /> Action</span>
+        <span className="flex items-center gap-2"><span className="h-3 w-3 rounded border-2 border-[var(--u)]" /> Screen</span>
+        <span className="flex items-center gap-2"><span className="h-3 w-3 rotate-45 bg-[var(--u)]" /> Decision</span>
         <span className="flex items-center gap-2"><span className="h-3 w-3 rounded bg-[var(--fg)]" /> Outcome</span>
       </div>
     </div>
@@ -196,7 +196,7 @@ function IATree() {
   return (
     <div className="mt-[10vh]">
       <div className="flex flex-wrap items-end justify-between gap-4">
-        <p className="font-uniway text-[clamp(1.8rem,3.4vw,3rem)] font-bold leading-none">Information architecture</p>
+        <p className="font-display text-[clamp(1.8rem,3.4vw,3rem)] font-bold leading-none">Information architecture</p>
         <p className="label">Tap a branch to expand</p>
       </div>
       <div className="mt-8 flex flex-wrap items-center gap-2">
@@ -207,7 +207,7 @@ function IATree() {
           </FadeIn>
         ))}
         <FadeIn delay={0.3}>
-          <span className="rounded-xl bg-[#F37500] px-5 py-2 text-sm font-bold text-white">{ia.root}</span>
+          <span className="rounded-xl bg-[var(--u)] px-5 py-2 text-sm font-bold text-white">{ia.root}</span>
         </FadeIn>
       </div>
       <div className="relative mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
@@ -224,13 +224,13 @@ function IATree() {
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className={`w-full rounded-xl px-3 py-3 text-sm font-bold transition-colors ${open === i ? "bg-[var(--fg)] text-[var(--bg)]" : "bg-[#F37500] text-white"}`}
+                className={`w-full rounded-xl px-3 py-3 text-sm font-bold transition-colors ${open === i ? "bg-[var(--fg)] text-[var(--bg)]" : "bg-[var(--u)] text-white"}`}
               >
                 {b.name}
               </button>
               <motion.ul
                 animate={{ opacity: isOpen ? 1 : 0.25 }}
-                className="ml-4 mt-2 space-y-2 border-l border-dashed border-[#F37500]/60 pl-3"
+                className="ml-4 mt-2 space-y-2 border-l border-dashed border-[var(--u)]/60 pl-3"
               >
                 {b.children.map((c, j) => (
                   <motion.li
@@ -239,7 +239,7 @@ function IATree() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 + i * 0.07 + j * 0.05 }}
-                    className="rounded-lg border border-[#F37500]/40 px-3 py-1.5 text-xs"
+                    className="rounded-lg border border-[var(--u)]/40 px-3 py-1.5 text-xs"
                   >
                     {c}
                   </motion.li>

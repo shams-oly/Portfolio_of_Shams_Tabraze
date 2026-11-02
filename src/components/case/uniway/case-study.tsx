@@ -5,29 +5,27 @@ import Link from "next/link";
 import { stages } from "./data";
 import { UniwayGlance, UniwayHero } from "./hero";
 import { StageBand } from "./parts";
-import { ScreensProvider } from "./phone";
-import type { ScreenMap } from "./screens";
 import { DesignSection, FeatureTour } from "./s-design";
 import { DefineGoals, DefineSection, IdeateSection } from "./s-define";
 import { ProblemSection, ProcessSection } from "./s-problem";
 import { ResearchSection } from "./s-research";
 import { Reflection, ScreensWall, TestingSection } from "./s-test";
 
-const CHAPTERS = ["Problem", "Process", "Research", "Define", "Ideate", "Design", "Product", "Testing", "Reflection"];
+const CHAPTERS = ["Problem", "Process", "Research", "Define", "Ideate", "Redesign", "Product", "Testing", "Reflection"];
 
 function ProgressRail() {
   const { scrollYProgress } = useScroll();
   const scaleY = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
   return (
     <div className="pointer-events-none fixed left-4 top-1/2 z-40 hidden h-40 w-1 -translate-y-1/2 overflow-hidden rounded-full bg-[var(--line)] xl:block">
-      <motion.div className="h-full w-full origin-top bg-[#F37500]" style={{ scaleY }} />
+      <motion.div className="h-full w-full origin-top bg-[var(--u)]" style={{ scaleY }} />
     </div>
   );
 }
 
-export function UniwayCaseStudy({ screens, next }: { screens: ScreenMap; next?: { slug: string; title: string } }) {
+export function UniwayCaseStudy({ next }: { next?: { slug: string; title: string } }) {
   return (
-    <ScreensProvider value={screens}>
+    <>
       <ProgressRail />
       <UniwayHero />
       <UniwayGlance />
@@ -72,6 +70,6 @@ export function UniwayCaseStudy({ screens, next }: { screens: ScreenMap; next?: 
           </div>
         </Link>
       )}
-    </ScreensProvider>
+    </>
   );
 }

@@ -20,12 +20,12 @@ function StackCard({ i, total, text, progress }: { i: number; total: number; tex
       >
         <motion.div className="pointer-events-none absolute inset-0 bg-black" style={{ opacity: dim }} />
         <div className="flex items-start justify-between">
-          <span className="font-uniway text-6xl font-black text-[#F37500]">{String(i + 1).padStart(2, "0")}</span>
-          <span className="rounded-full bg-[#F37500]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#F37500]">
+          <span className="font-display text-6xl font-black text-[var(--u)]">{String(i + 1).padStart(2, "0")}</span>
+          <span className="rounded-full bg-[var(--u)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--u)]">
             Problem
           </span>
         </div>
-        <p className="font-uniway text-[clamp(1.4rem,2.4vw,2.2rem)] font-semibold leading-tight">{text}</p>
+        <p className="font-display text-[clamp(1.4rem,2.4vw,2.2rem)] font-semibold leading-tight">{text}</p>
       </motion.div>
     </div>
   );
@@ -40,9 +40,9 @@ export function ProblemSection() {
       <div className="mt-[8vh] grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
         <div className="md:sticky md:top-[18vh] md:self-start">
           <FadeIn>
-            <p className="font-uniway text-[clamp(1.4rem,2.2vw,2rem)] font-medium leading-snug">{problemCopy.lead}</p>
+            <p className="font-display text-[clamp(1.4rem,2.2vw,2rem)] font-medium leading-snug">{problemCopy.lead}</p>
             <p className="mt-6 text-lg leading-relaxed text-[var(--fg-2)]">{problemCopy.body}</p>
-            <div className="mt-10 flex items-center gap-4 rounded-2xl border border-dashed border-[#F37500]/50 p-5">
+            <div className="mt-10 flex items-center gap-4 rounded-2xl border border-dashed border-[var(--u)]/50 p-5">
               <span className="text-4xl">🎓</span>
               <p className="text-sm text-[var(--fg-2)]">
                 After our interviews, four frustrations kept coming back. Scroll through them →
@@ -74,7 +74,7 @@ function ArcNode({ i, progress }: { i: number; progress: MotionValue<number> }) 
   return (
     <motion.span
       style={{ left: `${cx}%`, top: `${cy}%`, scale, opacity: on }}
-      className="absolute -ml-5 -mt-5 flex h-10 w-10 items-center justify-center rounded-full border-4 border-[var(--bg)] bg-[#F37500] font-uniway text-sm font-bold text-white shadow-[0_0_0_6px_rgba(243,117,0,0.18)]"
+      className="absolute -ml-5 -mt-5 flex h-10 w-10 items-center justify-center rounded-full border-4 border-[var(--bg)] bg-[var(--u)] font-display text-sm font-bold text-white shadow-[0_0_0_6px_rgba(139,61,255,0.18)]"
     >
       {i + 1}
     </motion.span>
@@ -86,9 +86,9 @@ function StageLegend({ i, progress, name, items }: { i: number; progress: Motion
   const opacity = useTransform(progress, [t - 0.08, t], [0.25, 1]);
   const y = useTransform(progress, [t - 0.08, t], [12, 0]);
   return (
-    <motion.div style={{ opacity, y }} className="border-t-2 border-[#F37500] pt-4">
-      <p className="font-mono text-xs text-[#F37500]">0{i + 1}</p>
-      <p className="font-uniway text-xl font-bold">{name}</p>
+    <motion.div style={{ opacity, y }} className="border-t-2 border-[var(--u)] pt-4">
+      <p className="font-mono text-xs text-[var(--u)]">0{i + 1}</p>
+      <p className="font-display text-xl font-bold">{name}</p>
       <ul className="mt-2 space-y-1 text-sm text-[var(--fg-3)]">
         {items.map((it) => (
           <li key={it}>{it}</li>
@@ -109,7 +109,7 @@ function DesignThinkingArc() {
         <motion.path
           d="M8 3.6 A42 35.4 0 0 0 92 3.6"
           fill="none"
-          stroke="#F37500"
+          stroke="var(--u)"
           strokeWidth="0.6"
           strokeLinecap="round"
           style={{ pathLength: draw }}
@@ -117,8 +117,8 @@ function DesignThinkingArc() {
       </svg>
       <div className="absolute inset-x-0 top-[22%] text-center">
         <p className="label">Our framework</p>
-        <p className="mt-2 font-uniway text-3xl font-bold">
-          Design <span className="text-[#F37500]">thinking</span>
+        <p className="mt-2 font-display text-3xl font-bold">
+          Design <span className="text-[var(--u)]">thinking</span>
         </p>
       </div>
       {stages.map((s, i) => (
@@ -139,9 +139,9 @@ function StagesMobile() {
       {stages.map((s, i) => (
         <FadeIn key={s.name} delay={i * 0.05}>
           <li className="flex gap-4 rounded-2xl border border-[var(--line)] p-5">
-            <span className="font-uniway text-2xl font-black text-[#F37500]">{i + 1}</span>
+            <span className="font-display text-2xl font-black text-[var(--u)]">{i + 1}</span>
             <div>
-              <p className="font-uniway text-xl font-bold">{s.name}</p>
+              <p className="font-display text-xl font-bold">{s.name}</p>
               <p className="mt-1 text-sm text-[var(--fg-3)]">{s.items.join(" · ")}</p>
             </div>
           </li>
@@ -157,7 +157,7 @@ function Gantt() {
     <div className="mt-[10vh] overflow-x-auto" data-lenis-prevent-wheel>
       <div className="min-w-[760px] rounded-3xl border border-[var(--line)] bg-[var(--surface)] p-6 md:p-8">
         <div className="mb-6 flex items-baseline justify-between">
-          <p className="font-uniway text-2xl font-bold">12 weeks, overlapping by design</p>
+          <p className="font-display text-2xl font-bold">12 weeks, overlapping by design</p>
           <p className="label">Oct 20, 2021 → Jan 2022</p>
         </div>
         <div className="relative">

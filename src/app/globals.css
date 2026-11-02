@@ -18,8 +18,22 @@
   --accent-2: #8b3dff;
   --accent-3: #ff3d8b;
   --lime: #c6ff3d;
+  --u: #8b3dff;
   --grad: linear-gradient(100deg, #2f6bff 0%, #8b3dff 45%, #ff3d8b 100%);
   --noise-opacity: 0.05;
+  --shadow: 0 30px 80px -30px rgba(13, 13, 18, 0.25);
+  color-scheme: light;
+}
+
+/* Forced light scope (used by device mockups inside a dark page) */
+[data-theme="light"] {
+  --bg: #f3f1ec;
+  --bg-2: #e9e6df;
+  --surface: #ffffff;
+  --fg: #0d0d12;
+  --fg-2: #4a4a55;
+  --fg-3: #8a8a95;
+  --line: rgba(13, 13, 18, 0.12);
   --shadow: 0 30px 80px -30px rgba(13, 13, 18, 0.25);
   color-scheme: light;
 }
@@ -219,4 +233,7 @@ body {
 .u-dots {
   background-image: radial-gradient(var(--line) 1.2px, transparent 1.2px);
   background-size: 18px 18px;
+}
+.bg-grad {
+  background: var(--grad);
 }

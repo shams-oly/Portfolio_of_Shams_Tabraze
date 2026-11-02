@@ -14,7 +14,7 @@ function InterviewGuide() {
   return (
     <div className="mt-[8vh] grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
       <div>
-        <p className="font-uniway text-2xl font-bold">The interview guide</p>
+        <p className="font-display text-2xl font-bold">The interview guide</p>
         <p className="mt-2 text-[var(--fg-2)]">Five themes, 20+ questions. Pick one.</p>
         <LayoutGroup>
           <div className="mt-6 flex flex-wrap gap-2 md:flex-col md:items-start">
@@ -24,7 +24,7 @@ function InterviewGuide() {
                 onClick={() => setG(i)}
                 className={`relative rounded-full px-4 py-2 text-sm font-semibold transition-colors ${g === i ? "text-white" : "text-[var(--fg-2)] hover:text-[var(--fg)]"}`}
               >
-                {g === i && <motion.span layoutId="iq" className="absolute inset-0 rounded-full bg-[#F37500]" transition={{ type: "spring", stiffness: 420, damping: 34 }} />}
+                {g === i && <motion.span layoutId="iq" className="absolute inset-0 rounded-full bg-[var(--u)]" transition={{ type: "spring", stiffness: 420, damping: 34 }} />}
                 <span className="relative">
                   {String(i + 1).padStart(2, "0")} {x.title}
                 </span>
@@ -42,7 +42,7 @@ function InterviewGuide() {
                 variants={{ h: { opacity: 0, x: 24 }, s: { opacity: 1, x: 0, transition: { delay: i * 0.06, ease: EASE_OUT, duration: 0.5 } } }}
                 className="flex gap-4 border-b border-[var(--line)] pb-3 last:border-0"
               >
-                <span className="font-mono text-xs text-[#F37500]">Q{i + 1}</span>
+                <span className="font-mono text-xs text-[var(--u)]">Q{i + 1}</span>
                 <span className="font-medium">{q}</span>
               </motion.li>
             ))}
@@ -69,7 +69,7 @@ function EmpathyMaps() {
     <div className="mt-[14vh]">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <p className="font-uniway text-[clamp(1.8rem,3.4vw,3rem)] font-bold leading-none">Empathy maps</p>
+          <p className="font-display text-[clamp(1.8rem,3.4vw,3rem)] font-bold leading-none">Empathy maps</p>
           <p className="mt-3 max-w-md text-[var(--fg-2)]">What three interviewees said, thought, did and felt while trying to study abroad.</p>
         </div>
         <div className="flex gap-2 rounded-full border border-[var(--line)] p-1">
@@ -90,7 +90,7 @@ function EmpathyMaps() {
             {m.who} — {m.context}
           </p>
           <div className="relative mt-4 grid gap-4 md:grid-cols-2">
-            <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-[var(--bg)] bg-[#F37500] font-uniway text-3xl font-black text-white md:flex">
+            <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 hidden h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-[var(--bg)] bg-[var(--u)] font-display text-3xl font-black text-white md:flex">
               {String.fromCharCode(65 + p)}
             </div>
             {QUADS.map((q, i) => (
@@ -102,7 +102,7 @@ function EmpathyMaps() {
                 style={{ transformPerspective: 900 }}
                 className="rounded-3xl border border-[var(--line)] bg-[var(--surface)] p-6"
               >
-                <p className="flex items-center gap-2 font-uniway text-lg font-bold text-[#F37500]">
+                <p className="flex items-center gap-2 font-display text-lg font-bold text-[var(--u)]">
                   <span>{q.icon}</span> {q.label}
                 </p>
                 <ul className="mt-3 space-y-2 text-[0.95rem] leading-relaxed text-[var(--fg-2)]">
@@ -152,7 +152,7 @@ function TiltCard({ children, className = "" }: { children: React.ReactNode; cla
 function Personas() {
   return (
     <div className="mt-[14vh]">
-      <p className="font-uniway text-[clamp(1.8rem,3.4vw,3rem)] font-bold leading-none">Meet the people we designed for</p>
+      <p className="font-display text-[clamp(1.8rem,3.4vw,3rem)] font-bold leading-none">Meet the people we designed for</p>
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
         {personas.map((p, i) => (
           <FadeIn key={p.name} delay={i * 0.12}>
@@ -160,13 +160,13 @@ function Personas() {
               <div className="relative p-8" style={{ background: `linear-gradient(135deg, ${p.tone}22, transparent 70%)` }}>
                 <div className="flex items-center gap-5">
                   <span
-                    className="flex h-20 w-20 items-center justify-center rounded-full font-uniway text-2xl font-black text-white"
+                    className="flex h-20 w-20 items-center justify-center rounded-full font-display text-2xl font-black text-white"
                     style={{ background: p.tone }}
                   >
                     {p.initials}
                   </span>
                   <div>
-                    <p className="font-uniway text-3xl font-bold">{p.name}</p>
+                    <p className="font-display text-3xl font-bold">{p.name}</p>
                     <div className="mt-2 flex flex-wrap gap-2">
                       {p.facts.map(([k, v]) => (
                         <span key={k} className="rounded-full bg-[var(--bg)] px-3 py-1 text-xs">
@@ -176,8 +176,8 @@ function Personas() {
                     </div>
                   </div>
                 </div>
-                <p className="mt-6 font-uniway text-xl leading-snug">
-                  <span className="text-4xl leading-none text-[#F37500]">“</span>
+                <p className="mt-6 font-display text-xl leading-snug">
+                  <span className="text-4xl leading-none text-[var(--u)]">“</span>
                   {p.quote}
                 </p>
               </div>
@@ -213,7 +213,7 @@ function Stories() {
   return (
     <div className="mt-[14vh] grid gap-10 md:grid-cols-[0.8fr_1.2fr]">
       <div className="md:sticky md:top-28 md:self-start">
-        <p className="font-uniway text-[clamp(1.8rem,3.4vw,3rem)] font-bold leading-none">User stories</p>
+        <p className="font-display text-[clamp(1.8rem,3.4vw,3rem)] font-bold leading-none">User stories</p>
         <p className="mt-3 text-[var(--fg-2)]">“As a…, I need…, so that…” — five stories that became our feature list.</p>
       </div>
       <div className="space-y-4">
@@ -232,9 +232,9 @@ function Stories() {
                 {s.name[0]}
               </span>
               <div
-                className={`max-w-[34rem] rounded-3xl px-5 py-4 ${right ? "rounded-br-md bg-[#F37500] text-white" : "rounded-bl-md border border-[var(--line)] bg-[var(--surface)]"}`}
+                className={`max-w-[34rem] rounded-3xl px-5 py-4 ${right ? "rounded-br-md bg-[var(--u)] text-white" : "rounded-bl-md border border-[var(--line)] bg-[var(--surface)]"}`}
               >
-                <p className={`mb-1 text-xs font-semibold ${right ? "text-white/80" : "text-[#F37500]"}`}>{s.name}</p>
+                <p className={`mb-1 text-xs font-semibold ${right ? "text-white/80" : "text-[var(--u)]"}`}>{s.name}</p>
                 <p className="leading-relaxed">{s.text}</p>
               </div>
             </motion.div>
@@ -269,9 +269,9 @@ function Journey() {
     <div ref={ref} className="mt-[14vh]">
       <div className="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <p className="font-uniway text-[clamp(1.8rem,3.4vw,3rem)] font-bold leading-none">Journey map · {journey.persona}</p>
+          <p className="font-display text-[clamp(1.8rem,3.4vw,3rem)] font-bold leading-none">Journey map · {journey.persona}</p>
           <p className="mt-3 max-w-xl text-[var(--fg-2)]">
-            <span className="font-semibold text-[#F37500]">Goal:</span> {journey.goal}
+            <span className="font-semibold text-[var(--u)]">Goal:</span> {journey.goal}
           </p>
         </div>
         <p className="label">With today&apos;s tools — before Uniway</p>
@@ -281,8 +281,8 @@ function Journey() {
           <div className="grid grid-cols-5 gap-3">
             {journey.steps.map((s, i) => (
               <div key={s.stage} className="rounded-2xl bg-[var(--bg)] p-4">
-                <p className="font-mono text-xs text-[#F37500]">{String(i + 1).padStart(2, "0")}</p>
-                <p className="font-uniway text-lg font-bold">{s.stage}</p>
+                <p className="font-mono text-xs text-[var(--u)]">{String(i + 1).padStart(2, "0")}</p>
+                <p className="font-display text-lg font-bold">{s.stage}</p>
                 <ul className="mt-2 space-y-1 text-xs text-[var(--fg-3)]">
                   {s.tasks.map((t) => (
                     <li key={t}>{t}</li>
@@ -294,7 +294,7 @@ function Journey() {
           <div className="relative mt-4 h-48 rounded-2xl bg-[var(--bg)]">
             <span className="label absolute left-4 top-3 !text-[0.6rem]">Feelings</span>
             <svg viewBox="0 0 1000 200" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
-              <motion.path d={d} fill="none" stroke="#F37500" strokeWidth="3" strokeLinecap="round" style={{ pathLength: draw }} />
+              <motion.path d={d} fill="none" stroke="var(--u)" strokeWidth="3" strokeLinecap="round" style={{ pathLength: draw }} />
             </svg>
             {journey.steps.map((s, i) => (
               <JourneyEmoji key={s.stage} x={pts[i].x} y={pts[i].y} emoji={s.emoji} at={i / (n - 1)} progress={draw} />
@@ -308,9 +308,9 @@ function Journey() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.1 }}
-                className="rounded-2xl border border-dashed border-[#F37500]/50 p-4 text-sm"
+                className="rounded-2xl border border-dashed border-[var(--u)]/50 p-4 text-sm"
               >
-                <p className="label mb-1 !text-[0.6rem] !text-[#F37500]">Opportunity</p>
+                <p className="label mb-1 !text-[0.6rem] !text-[var(--u)]">Opportunity</p>
                 {s.opportunity}
               </motion.div>
             ))}
@@ -338,7 +338,7 @@ function JourneyEmoji({ x, y, emoji, at, progress }: { x: number; y: number; emo
 function Competitors() {
   return (
     <div className="mt-[14vh]">
-      <p className="font-uniway text-[clamp(1.8rem,3.4vw,3rem)] font-bold leading-none">Competitor analysis</p>
+      <p className="font-display text-[clamp(1.8rem,3.4vw,3rem)] font-bold leading-none">Competitor analysis</p>
       <p className="mt-3 max-w-xl text-[var(--fg-2)]">Three popular study-abroad products, judged on what students told us matters.</p>
       <div className="mt-10 grid gap-5 md:grid-cols-3">
         {competitors.map((c, i) => (
@@ -352,11 +352,11 @@ function Competitors() {
             className="rounded-3xl border border-[var(--line)] bg-[var(--surface)] p-7"
           >
             <div className="flex items-center gap-3">
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl font-uniway text-xl font-black text-white" style={{ background: c.color }}>
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl font-display text-xl font-black text-white" style={{ background: c.color }}>
                 {c.name.slice(-1)}
               </span>
               <div>
-                <p className="font-uniway text-lg font-bold">{c.name}</p>
+                <p className="font-display text-lg font-bold">{c.name}</p>
                 <p className="text-xs text-[var(--fg-3)]">{c.kind}</p>
               </div>
             </div>

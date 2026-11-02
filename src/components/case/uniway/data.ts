@@ -10,10 +10,10 @@ export const meta = {
   title: "Uniway",
   tagline: "Higher study guide",
   summary:
-    "A study-abroad companion that helps students find the right university, prepare the right documents and get scholarships — with experts on hand when the process gets hard.",
-  role: "Team Lead · UX/UI Designer",
+    "A study-abroad companion that helps students find the right university, prepare the right documents and win scholarships — with experts on hand when it gets hard. Researched with my team in 2021, redesigned by me in 2026.",
+  role: "Team Lead (2022) · Redesign (2026)",
   team: "5 people (incl. mentor)",
-  timeline: "12 weeks · Oct 2021 – Jan 2022",
+  timeline: "12 weeks in 2021 · redesigned 2026",
   platform: "iOS & Android",
   tools: ["Figma", "FigJam", "Illustrator", "Photoshop", "Miro"],
   behance: "https://www.behance.net/gallery/141923013/Uniway-a-UIUX-Case-Study-of-a-University-Finding-App",
@@ -61,12 +61,12 @@ export const stages = [
 
 /** Gantt rows: start/end in weeks (1–12). */
 export const timeline = [
-  { name: "Strategy", detail: "Topic selection, secondary research", start: 1, end: 2.5, color: "#14B8A6" },
-  { name: "Empathize", detail: "Interviews, empathy maps, personas, user stories, journey maps", start: 1.5, end: 4.5, color: ORANGE },
-  { name: "Define", detail: "Problem & hypothesis statements, goal statement, crazy eights", start: 5, end: 7.5, color: "#8B5CF6" },
-  { name: "Ideate", detail: "Value proposition, competitive analysis, user flow, site map", start: 6, end: 8.5, color: "#3B82F6" },
-  { name: "Test", detail: "Usability test, survey, affinity mapping", start: 9, end: 10.5, color: "#EF4444" },
-  { name: "Design", detail: "Lo-fi & mid-fi wireframes, usability testing, hi-fi design, presentation", start: 8, end: 12.5, color: "#22C55E" },
+  { name: "Strategy", detail: "Topic selection, secondary research", start: 1, end: 2.5, color: "#2F6BFF" },
+  { name: "Empathize", detail: "Interviews, empathy maps, personas, user stories, journey maps", start: 1.5, end: 4.5, color: "#5B4DFF" },
+  { name: "Define", detail: "Problem & hypothesis statements, goal statement, crazy eights", start: 5, end: 7.5, color: "#8B3DFF" },
+  { name: "Ideate", detail: "Value proposition, competitive analysis, user flow, site map", start: 6, end: 8.5, color: "#B83DFF" },
+  { name: "Test", detail: "Usability test, survey, affinity mapping", start: 9, end: 10.5, color: "#FF3D8B" },
+  { name: "Design", detail: "Lo-fi & mid-fi wireframes, usability testing, hi-fi design, presentation", start: 8, end: 12.5, color: "#E0457B" },
 ];
 
 export const interviewGroups = [
@@ -209,7 +209,7 @@ export const personas = [
       "Doesn't trust agencies",
       "No clear list of documents for a visa",
     ],
-    tone: "#FF8A3D",
+    tone: "#FF3D8B",
   },
   {
     name: "Nafee Ahmed",
@@ -232,7 +232,7 @@ export const personas = [
       "Unfamiliar with ECA event schedules",
       "No trusted platform that shortlists by qualification",
     ],
-    tone: "#3B82F6",
+    tone: "#2F6BFF",
   },
 ];
 
@@ -390,7 +390,7 @@ export const affinity = {
 };
 
 export const team = [
-  { name: "Shams Tabraze Uddin Ahmed", role: "Team Lead · UX/UI Designer", me: true },
+  { name: "Shams Tabraze Uddin Ahmed", role: "Team Lead (2022) · Redesign (2026)", me: true },
   { name: "Mayeeshat Shamama Muskan", role: "UX/UI Designer" },
   { name: "Md Nur Hossan", role: "UX/UI Designer" },
   { name: "Ahmed Jespar", role: "UX/UI Designer" },
