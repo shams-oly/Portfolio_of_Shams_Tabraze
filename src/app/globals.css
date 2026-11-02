@@ -14,12 +14,13 @@
   --fg-2: #4a4a55;
   --fg-3: #8a8a95;
   --line: rgba(13, 13, 18, 0.12);
-  --accent: #3d5afe;
-  --accent-2: #8b3dff;
-  --accent-3: #ff3d8b;
-  --lime: #c6ff3d;
-  --u: #8b3dff;
-  --grad: linear-gradient(100deg, #2f6bff 0%, #8b3dff 45%, #ff3d8b 100%);
+  /* Elegant single accent: champagne / bronze */
+  --accent: #8a6a3e;
+  --accent-2: var(--accent);
+  --accent-3: var(--accent);
+  --lime: #dcc7a1;
+  --u: var(--accent);
+  --grad: linear-gradient(var(--accent), var(--accent));
   --noise-opacity: 0.05;
   --shadow: 0 30px 80px -30px rgba(13, 13, 18, 0.25);
   color-scheme: light;
@@ -35,10 +36,14 @@
   --fg-3: #8a8a95;
   --line: rgba(13, 13, 18, 0.12);
   --shadow: 0 30px 80px -30px rgba(13, 13, 18, 0.25);
+  --accent: #8a6a3e;
+  --lime: #dcc7a1;
   color-scheme: light;
 }
 
 [data-theme="dark"] {
+  --accent: #cdb184;
+  --lime: #cdb184;
   --bg: #08080b;
   --bg-2: #111116;
   --surface: #15151b;
@@ -96,8 +101,8 @@ body {
 }
 
 ::selection {
-  background: var(--accent-2);
-  color: #fff;
+  background: var(--accent);
+  color: var(--bg);
 }
 
 .font-display {
@@ -236,4 +241,20 @@ body {
 }
 .bg-grad {
   background: var(--grad);
+}
+
+/* Uniway keeps its own brand accent */
+.uniway {
+  --u: #f37500;
+  --grad: linear-gradient(100deg, #f37500 0%, #ff8a1f 100%);
+  --accent: #f37500;
+  --accent-2: #f37500;
+  --accent-3: #f37500;
+}
+.uniway [data-theme] {
+  --accent: #f37500;
+  --accent-2: #f37500;
+  --accent-3: #f37500;
+  --u: #f37500;
+  --grad: linear-gradient(100deg, #f37500 0%, #ff8a1f 100%);
 }

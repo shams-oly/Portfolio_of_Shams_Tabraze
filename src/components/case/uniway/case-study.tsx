@@ -25,7 +25,7 @@ function ProgressRail() {
 
 export function UniwayCaseStudy({ next }: { next?: { slug: string; title: string } }) {
   return (
-    <>
+    <div className="uniway">
       <ProgressRail />
       <UniwayHero />
       <UniwayGlance />
@@ -70,6 +70,6 @@ export function UniwayCaseStudy({ next }: { next?: { slug: string; title: string
           </div>
         </Link>
       )}
-    </>
+    </div>
   );
 }

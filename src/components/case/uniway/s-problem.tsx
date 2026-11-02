@@ -74,7 +74,7 @@ function ArcNode({ i, progress }: { i: number; progress: MotionValue<number> }) 
   return (
     <motion.span
       style={{ left: `${cx}%`, top: `${cy}%`, scale, opacity: on }}
-      className="absolute -ml-5 -mt-5 flex h-10 w-10 items-center justify-center rounded-full border-4 border-[var(--bg)] bg-[var(--u)] font-display text-sm font-bold text-white shadow-[0_0_0_6px_rgba(139,61,255,0.18)]"
+      className="absolute -ml-5 -mt-5 flex h-10 w-10 items-center justify-center rounded-full border-4 border-[var(--bg)] bg-[var(--u)] font-display text-sm font-bold text-white shadow-[0_0_0_6px_rgba(243,117,0,0.18)]"
     >
       {i + 1}
     </motion.span>

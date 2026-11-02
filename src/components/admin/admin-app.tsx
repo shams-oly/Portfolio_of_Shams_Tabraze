@@ -283,7 +283,7 @@ function ProjectEditor({
           <div className="flex-1">
             <Text label="Accent colour" value={p.accent} onChange={(v) => set("accent", v)} />
           </div>
-          <input type="color" value={/^#[0-9a-f]{6}$/i.test(p.accent) ? p.accent : "#8b3dff"} onChange={(e) => set("accent", e.target.value)} className="h-[46px] w-14 cursor-pointer rounded-lg border border-[var(--line)] bg-transparent" />
+          <input type="color" value={/^#[0-9a-f]{6}$/i.test(p.accent) ? p.accent : "#8a6a3e"} onChange={(e) => set("accent", e.target.value)} className="h-[46px] w-14 cursor-pointer rounded-lg border border-[var(--line)] bg-transparent" />
         </div>
         <div className="sm:col-span-2">
           <Area label="Summary" value={p.summary} onChange={(v) => set("summary", v)} rows={3} />

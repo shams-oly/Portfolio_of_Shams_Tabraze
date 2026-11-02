@@ -68,7 +68,7 @@ export function UniwayHero() {
         <div className="u-dots absolute inset-0 opacity-70" />
         {/* the orange disc */}
         <motion.div
-          className="absolute left-1/2 top-1/2 aspect-square w-[90vmax] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#8b3dff]"
+          className="absolute left-1/2 top-1/2 aspect-square w-[90vmax] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F37500]"
           style={{ scale: reduce ? 0.2 : disc }}
         />
         {/* giant wordmark behind the phones */}
@@ -138,7 +138,7 @@ export function UniwayGlance() {
   return (
     <section
       className="relative -mt-px overflow-hidden text-white"
-      style={{ background: "linear-gradient(180deg, #8b3dff 0%, #8b3dff 10%, transparent 55%), var(--grad)" }}
+      style={{ background: "linear-gradient(180deg, #F37500 0%, #F37500 10%, transparent 55%), var(--grad)" }}
     >
       <div className="u-grid-bg absolute inset-0 opacity-40" />
       <div className="container-x relative pb-[14vh] pt-[8vh]">
@@ -156,7 +156,7 @@ export function UniwayGlance() {
           <FadeIn delay={0.2} className="space-y-4 text-white/85">
             <p>
               A 12-week team project I led with four designers and a mentor — 100+ surveys, a 60-screen product and a usability test. In 2026
-              I redesigned the core screens in my own design language, built here as live code.
+              I redesigned the core screens — keeping Uniway’s orange — built here as live code.
             </p>
             <div className="flex flex-wrap gap-2">
               {meta.tools.map((t) => (

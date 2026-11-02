@@ -76,7 +76,7 @@ export function Cursor() {
         animate={{
           width: label ? 96 : hover ? 56 : 34,
           height: label ? 96 : hover ? 56 : 34,
-          backgroundColor: label ? "rgba(139,61,255,0.92)" : "rgba(0,0,0,0)",
+          backgroundColor: label ? "var(--accent)" : "rgba(0,0,0,0)",
           borderWidth: label ? 0 : 1,
         }}
         transition={{ duration: 0.35, ease: EASE }}
@@ -113,8 +113,8 @@ export function ThemeToggle() {
       <motion.span
         className="block h-4 w-4 rounded-full"
         animate={{
-          background: dark ? "var(--fg)" : "linear-gradient(135deg,#ffb020,#ff3d8b)",
-          boxShadow: dark ? "inset -5px -3px 0 0 var(--bg)" : "0 0 14px 2px rgba(255,176,32,0.6)",
+          background: dark ? "var(--fg)" : "var(--accent)",
+          boxShadow: dark ? "inset -5px -3px 0 0 var(--bg)" : "0 0 12px 2px rgba(138,106,62,0.45)",
           rotate: dark ? -30 : 0,
         }}
         transition={{ duration: 0.5, ease: EASE }}

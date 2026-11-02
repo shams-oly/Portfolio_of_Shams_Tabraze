@@ -8,7 +8,7 @@ export function UniwayMark({ className = "", light = false }: { className?: stri
   return (
     <span className={`inline-flex items-center gap-[0.35em] font-display font-extrabold leading-none tracking-[-0.04em] ${className}`}>
       <svg viewBox="0 0 40 28" className="h-[0.85em] w-auto" aria-hidden>
-        <path d="M20 2 38 9 20 16 2 9Z" fill={light ? "#fff" : "#8b3dff"} />
+        <path d="M20 2 38 9 20 16 2 9Z" fill={light ? "#fff" : "#F37500"} />
         <path d="M9 12v7c0 3 5 6 11 6s11-3 11-6v-7l-11 4.5Z" fill={light ? "rgba(255,255,255,.7)" : "currentColor"} />
       </svg>
       <span>

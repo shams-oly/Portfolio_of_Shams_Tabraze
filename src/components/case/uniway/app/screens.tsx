@@ -68,7 +68,7 @@ function Onboarding() {
               </div>
             </div>
             <div className="mt-3 flex items-center justify-between">
-              <Pill tone="lime">{u.match}% match</Pill>
+              <Pill tone="violet">{u.match}% match</Pill>
               <Icon n="bookmark" s={16} className="text-[var(--fg-3)]" />
             </div>
           </div>
@@ -162,7 +162,7 @@ function Home() {
         </div>
         <span className="relative flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--line)]">
           <Icon n="bell" s={20} />
-          <span className="absolute right-2.5 top-2.5 h-2 w-2 rounded-full bg-[#ff3d8b]" />
+          <span className="absolute right-2.5 top-2.5 h-2 w-2 rounded-full bg-[#E5484D]" />
         </span>
       </div>
       <Search />
@@ -191,7 +191,7 @@ function Home() {
             <div key={u.code} className="w-[200px] shrink-0 overflow-hidden rounded-[20px] border border-[var(--line)] bg-[var(--surface)]">
               <Campus hue={u.color} src={u.photo} className="h-[104px]">
                 <span className="absolute left-3 top-3">
-                  <Pill tone="lime">{u.match}% match</Pill>
+                  <Pill tone="violet">{u.match}% match</Pill>
                 </span>
               </Campus>
               <div className="relative p-3.5 pt-6">
@@ -306,8 +306,8 @@ function Filters() {
         <p className="mt-5 text-[12px] font-bold uppercase tracking-wider text-[var(--fg-3)]">Tuition per year</p>
         <div className="relative mt-4 h-1.5 rounded-full bg-[var(--line)]">
           <span className="absolute inset-y-0 left-[12%] right-[30%] rounded-full" style={{ background: "var(--grad)" }} />
-          <span className="absolute left-[12%] top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-[var(--surface)] bg-[#2f6bff] shadow" />
-          <span className="absolute right-[30%] top-1/2 h-5 w-5 -translate-y-1/2 translate-x-1/2 rounded-full border-4 border-[var(--surface)] bg-[#ff3d8b] shadow" />
+          <span className="absolute left-[12%] top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-[var(--surface)] bg-[#404040] shadow" />
+          <span className="absolute right-[30%] top-1/2 h-5 w-5 -translate-y-1/2 translate-x-1/2 rounded-full border-4 border-[var(--surface)] bg-[#E5484D] shadow" />
         </div>
         <div className="mt-2 flex justify-between text-[11.5px] font-semibold text-[var(--fg-3)]">
           <span>$5k</span>
@@ -354,7 +354,7 @@ function University() {
                 <Icon n="pin" s={12} /> {u.place}
               </p>
             </div>
-            <Pill tone="lime">{u.match}% match</Pill>
+            <Pill tone="violet">{u.match}% match</Pill>
           </div>
           <div className="mt-4 grid grid-cols-3 divide-x divide-[var(--line)] rounded-xl bg-[var(--bg)] py-3 text-center">
             {[
@@ -394,7 +394,7 @@ function University() {
               <div key={t as string} className="flex items-center justify-between rounded-xl border border-[var(--line)] px-4 py-3 text-[13px] font-semibold">
                 {t as string}
                 {ok ? (
-                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#c6ff3d] text-black">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-md bg-[#16a34a] text-white">
                     <Icon n="check" s={14} w={2.6} />
                   </span>
                 ) : (
@@ -441,9 +441,9 @@ function Documents() {
             <circle cx="18" cy="18" r="15" fill="none" stroke="url(#ug)" strokeWidth="4" strokeDasharray="94.2" strokeDashoffset="47" strokeLinecap="round" />
             <defs>
               <linearGradient id="ug" x1="0" x2="1">
-                <stop offset="0" stopColor="#2f6bff" />
-                <stop offset=".5" stopColor="#8b3dff" />
-                <stop offset="1" stopColor="#ff3d8b" />
+                <stop offset="0" stopColor="#F37500" />
+                <stop offset=".5" stopColor="#F98018" />
+                <stop offset="1" stopColor="#FF8A1F" />
               </linearGradient>
             </defs>
           </svg>
@@ -456,7 +456,7 @@ function Documents() {
       </div>
       <div className="mt-5 space-y-2.5 px-5">
         {docs.map((d) => (
-          <div key={d.t} className={`rounded-2xl border bg-[var(--surface)] p-4 ${d.s === "fix" ? "border-[#ff3d8b]/60" : "border-[var(--line)]"}`}>
+          <div key={d.t} className={`rounded-2xl border bg-[var(--surface)] p-4 ${d.s === "fix" ? "border-[#E5484D]/60" : "border-[var(--line)]"}`}>
             <div className="flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--bg-2)]">
                 <Icon n="file" s={18} />
@@ -474,7 +474,7 @@ function Documents() {
               )}
             </div>
             {d.note && (
-              <div className="mt-3 flex gap-2.5 rounded-xl bg-[#ff3d8b]/10 p-3">
+              <div className="mt-3 flex gap-2.5 rounded-xl bg-[#E5484D]/10 p-3">
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[var(--fg)] text-[10px] font-bold text-[var(--bg)]">AR</span>
                 <p className="text-[12px] leading-relaxed">
                   <span className="font-bold">Expert · Anika R.</span> {d.note}
@@ -507,7 +507,7 @@ function Scholarships() {
         <span className="absolute -right-10 -top-10 h-40 w-40 rounded-full opacity-60 blur-2xl" style={{ background: "var(--grad)" }} />
         <div className="relative">
           <div className="flex items-center justify-between">
-            <Pill tone="lime">Fully funded</Pill>
+            <Pill tone="violet">Fully funded</Pill>
             <span className="text-[11.5px] font-semibold opacity-70">Closes in 12 days</span>
           </div>
           <p className="mt-4 text-[22px] font-extrabold leading-tight">Fulbright Foreign Student Program</p>
@@ -568,9 +568,9 @@ function Events() {
       </div>
       <div className="mt-5 space-y-4 px-5">
         {[
-          { d: "18", m: "Dec", t: "National Mathematical Olympiad 2026", tag: "Olympiad", tone: "violet", where: "Dhaka · Offline", hue: "#8b3dff", seats: "312 going", img: "/case/uniway/eca-olympiad.jpg" },
-          { d: "04", m: "Jan", t: "Writing an SOP that gets read", tag: "Workshop", tone: "blue", where: "Online · Live", hue: "#2f6bff", seats: "1.2k going", img: "/case/uniway/eca-math.jpg" },
-          { d: "21", m: "Jan", t: "Study in Germany Virtual Fair", tag: "Fair", tone: "pink", where: "Online · 40 universities", hue: "#ff3d8b", seats: "860 going", img: "/case/uniway/campus-toronto.jpg" },
+          { d: "18", m: "Dec", t: "National Mathematical Olympiad 2026", tag: "Olympiad", tone: "violet", where: "Dhaka · Offline", hue: "#F37500", seats: "312 going", img: "/case/uniway/eca-olympiad.jpg" },
+          { d: "04", m: "Jan", t: "Writing an SOP that gets read", tag: "Workshop", tone: "blue", where: "Online · Live", hue: "#404040", seats: "1.2k going", img: "/case/uniway/eca-math.jpg" },
+          { d: "21", m: "Jan", t: "Study in Germany Virtual Fair", tag: "Fair", tone: "pink", where: "Online · 40 universities", hue: "#E5484D", seats: "860 going", img: "/case/uniway/campus-toronto.jpg" },
         ].map((e, i) => (
           <div key={e.t} className="overflow-hidden rounded-[22px] border border-[var(--line)] bg-[var(--surface)]">
             {i === 0 && (
@@ -631,7 +631,7 @@ function Status_() {
             )}
             <span
               className={`relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${
-                s === "done" ? "bg-[#c6ff3d] text-black" : s === "now" ? "text-white ring-4 ring-[#8b3dff]/25" : "border-2 border-[var(--line)] bg-[var(--surface)]"
+                s === "done" ? "bg-[#16a34a] text-white" : s === "now" ? "text-white ring-4 ring-[#F37500]/25" : "border-2 border-[var(--line)] bg-[var(--surface)]"
               }`}
               style={s === "now" ? { background: "var(--grad)" } : undefined}
             >
@@ -639,7 +639,7 @@ function Status_() {
             </span>
             <div className="-mt-0.5">
               <p className={`text-[14px] font-bold ${s === "next" ? "text-[var(--fg-3)]" : ""}`}>{t}</p>
-              <p className={`text-[12px] ${s === "now" ? "font-semibold text-[#ff3d8b]" : "text-[var(--fg-3)]"}`}>{d}</p>
+              <p className={`text-[12px] ${s === "now" ? "font-semibold text-[#E5484D]" : "text-[var(--fg-3)]"}`}>{d}</p>
             </div>
           </div>
         ))}
@@ -693,7 +693,7 @@ function Community() {
             {p.ans ? (
               <div className="mt-3 rounded-xl bg-[var(--bg)] p-3">
                 <p className="flex items-center gap-1.5 text-[11.5px] font-bold">
-                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#c6ff3d] text-black">
+                  <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#16a34a] text-white">
                     <Icon n="check" s={10} w={3} />
                   </span>
                   Verified by an expert
@@ -701,7 +701,7 @@ function Community() {
                 <p className="mt-1.5 text-[12.5px] leading-relaxed text-[var(--fg-2)]">{p.ans}</p>
               </div>
             ) : (
-              <p className="mt-3 text-[12px] font-semibold text-[#ff3d8b]">Waiting for an expert answer</p>
+              <p className="mt-3 text-[12px] font-semibold text-[#E5484D]">Waiting for an expert answer</p>
             )}
             <div className="mt-3 flex gap-4 text-[12px] font-semibold text-[var(--fg-3)]">
               <span className="flex items-center gap-1">
@@ -747,7 +747,7 @@ function Confirmed() {
             ["card", "$15 · Paid"],
           ].map(([i, t]) => (
             <span key={t} className="flex items-center gap-2 font-semibold">
-              <Icon n={i} s={16} className="text-[#8b3dff]" /> {t}
+              <Icon n={i} s={16} className="text-[#F37500]" /> {t}
             </span>
           ))}
         </div>
@@ -778,7 +778,7 @@ function Profile() {
           <p className="text-[20px] font-extrabold">Edward Rahman</p>
           <p className="text-[12.5px] text-[var(--fg-3)]">Masters · EEE · Dhaka</p>
           <span className="mt-1 inline-block">
-            <Pill tone="lime">Profile 80% complete</Pill>
+            <Pill tone="violet">Profile 80% complete</Pill>
           </span>
         </div>
       </div>

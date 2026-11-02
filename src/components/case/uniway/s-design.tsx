@@ -156,10 +156,10 @@ function ThemeCompare() {
 /* ---------- Style guide: 2022 vs 2026 ---------- */
 
 const NOW_COLORS = [
+  { hex: "#F37500", name: "Uniway Orange", use: "Kept from 2022 · brand" },
   { hex: "#0D0D12", name: "Ink", use: "Text · dark surfaces" },
   { hex: "#F3F1EC", name: "Paper", use: "Light background" },
-  { hex: "#8B3DFF", name: "Violet", use: "Brand · focus" },
-  { hex: "#C6FF3D", name: "Lime", use: "Success · approved" },
+  { hex: "#16A34A", name: "Green", use: "Approved · success" },
 ];
 
 function Swatch({ hex, name, use, i }: { hex: string; name: string; use: string; i: number }) {
@@ -226,7 +226,7 @@ function ThenNow() {
           <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full opacity-25 blur-3xl" style={{ background: "var(--grad)" }} />
           <div className="relative flex flex-wrap items-center justify-between gap-2">
             <p className="label !text-[var(--u)]">2026 · Redesign</p>
-            <span className="rounded-full bg-[var(--bg-2)] px-3 py-1 text-xs">Syne + Manrope · angular · light & dark</span>
+            <span className="rounded-full bg-[var(--bg-2)] px-3 py-1 text-xs">Manrope · rounded · light & dark</span>
           </div>
           <div className="relative mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {NOW_COLORS.map((c, i) => (
@@ -235,15 +235,15 @@ function ThenNow() {
           </div>
           <div className="rounded-xl relative mt-3 h-10" style={{ background: "var(--grad)" }}>
             <span className="absolute inset-0 flex items-center justify-between px-4 font-mono text-[11px] font-semibold text-white">
-              <span>#2F6BFF</span>
-              <span>Signature gradient</span>
-              <span>#FF3D8B</span>
+              <span>#F37500</span>
+              <span>Brand orange, kept</span>
+              <span>#FF8A1F</span>
             </span>
           </div>
           <div className="relative mt-6 space-y-2">
             {[
-              ["Display", "Syne 800", "font-display font-extrabold text-2xl tracking-tight"],
-              ["Heading", "Syne 700 · 17pt", "font-display font-bold text-lg"],
+              ["Display", "Manrope 800 · 28pt", "font-extrabold text-2xl tracking-tight"],
+              ["Heading", "Manrope 800 · 17pt", "font-extrabold text-lg"],
               ["Body", "Manrope 500 · 13.5pt", "text-sm font-medium"],
               ["Label", "JetBrains Mono · caps", "font-mono text-xs uppercase tracking-widest"],
             ].map(([k, v, cls]) => (
@@ -263,9 +263,9 @@ function ThenNow() {
 
 const NAV = ["Home", "Explore", "Help", "Community", "Profile"];
 const STATES = [
-  { k: "Approved", c: "bg-[#c6ff3d] text-black" },
-  { k: "Needs fix", c: "bg-[#ff3d8b]/15 text-[#ff3d8b]" },
-  { k: "In review", c: "bg-[#8b3dff]/15 text-[#8b3dff]" },
+  { k: "Approved", c: "bg-[#16a34a] text-white" },
+  { k: "Needs fix", c: "bg-[#E5484D]/15 text-[#E5484D]" },
+  { k: "In review", c: "bg-[#F37500]/15 text-[#F37500]" },
   { k: "Missing", c: "bg-[var(--bg-2)] text-[var(--fg-2)]" },
 ];
 
@@ -281,7 +281,7 @@ function LiveComponents() {
         <motion.button
           whileTap={{ scale: 0.96 }}
           onClick={() => setStarted((v) => !v)}
-          className="flex h-12 w-full items-center justify-center gap-2 rounded-2xl text-sm font-bold text-white shadow-[0_14px_28px_-14px_#8b3dff]"
+          className="flex h-12 w-full items-center justify-center gap-2 rounded-2xl text-sm font-bold text-white shadow-[0_14px_28px_-14px_#F37500]"
           style={{ background: "var(--grad)" }}
         >
           {started ? "Application started ✓" : "Start your application · $120 →"}
@@ -343,7 +343,7 @@ export function DesignSection() {
         n="06"
         eyebrow="Redesign · 2026"
         title="Same research. A sharper product."
-        intro="In 2022 we shipped a warm orange UI. Four years on, I redesigned every core screen in my own design language — keeping the research and sharpening the decisions it pointed to. Every screen on this page is live code, not an image."
+        intro="In 2022 we shipped a warm orange UI. Four years on, I redesigned every core screen — keeping the research and Uniway’s orange, and sharpening the decisions the research pointed to. Every screen on this page is live code, not an image."
       />
       <Decisions />
       <ThemeCompare />

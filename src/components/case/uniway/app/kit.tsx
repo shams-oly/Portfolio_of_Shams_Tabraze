@@ -107,7 +107,7 @@ export function Btn({ children, ghost = false, className = "" }: { children: Rea
   return ghost ? (
     <span className={`flex h-12 items-center justify-center gap-2 rounded-2xl border border-[var(--line)] text-[14px] font-bold ${className}`}>{children}</span>
   ) : (
-    <span className={`flex h-12 items-center justify-center gap-2 rounded-2xl text-[14px] font-bold text-white shadow-[0_14px_28px_-14px_#8b3dff] ${className}`} style={{ background: "var(--grad)" }}>
+    <span className={`flex h-12 items-center justify-center gap-2 rounded-2xl text-[14px] font-bold text-white shadow-[0_14px_28px_-14px_#F37500] ${className}`} style={{ background: "var(--grad)" }}>
       {children}
     </span>
   );
@@ -128,10 +128,10 @@ export function Chip({ children, on = false }: { children: ReactNode; on?: boole
 export function Pill({ children, tone = "neutral" }: { children: ReactNode; tone?: "neutral" | "lime" | "pink" | "violet" | "blue" }) {
   const t = {
     neutral: "bg-[var(--bg-2)] text-[var(--fg-2)]",
-    lime: "bg-[#c6ff3d] text-black",
-    pink: "bg-[#ff3d8b]/15 text-[#ff3d8b]",
-    violet: "bg-[#8b3dff]/15 text-[#8b3dff] dark:text-[#b48bff]",
-    blue: "bg-[#2f6bff]/15 text-[#2f6bff] dark:text-[#7ea2ff]",
+    lime: "bg-[#16a34a] text-white",
+    pink: "bg-[#E5484D]/15 text-[#E5484D]",
+    violet: "bg-[#F37500]/15 text-[#F37500] dark:text-[#ff9a3d]",
+    blue: "bg-[#404040]/15 text-[#404040] dark:text-[#a3a3a3]",
   }[tone];
   return <span className={`inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[10.5px] font-bold uppercase tracking-wide ${t}`}>{children}</span>;
 }
@@ -172,7 +172,7 @@ export function Search({ text = "Universities, courses, scholarships…", typed 
 
 /** Abstract campus artwork (no photos needed). */
 export function Campus({
-  hue = "#8b3dff",
+  hue = "#F37500",
   src,
   pos = "center",
   className = "",

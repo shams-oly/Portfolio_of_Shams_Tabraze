@@ -24,12 +24,12 @@ function Core({ dark }: { dark: boolean }) {
       <icosahedronGeometry args={[1, 48]} />
       <MeshDistortMaterial
         ref={mat as never}
-        color={dark ? "#d9d4ff" : "#ffffff"}
+        color={dark ? "#efe4cf" : "#ffffff"}
         roughness={0.08}
         metalness={dark ? 0.55 : 0.25}
         clearcoat={1}
         clearcoatRoughness={0.1}
-        iridescence={1}
+        iridescence={0.3}
         iridescenceIOR={1.6}
         iridescenceThicknessRange={[200, 900]}
         envMapIntensity={dark ? 1.4 : 1.1}
@@ -119,12 +119,12 @@ export default function HeroScene({ icons, dark }: Props) {
             <Core dark={dark} />
             <IconRing icons={icons} />
           </Stage>
-          <Sparkles count={70} scale={[10, 6, 6]} size={2.2} speed={0.35} opacity={dark ? 0.6 : 0.35} color={dark ? "#c9b8ff" : "#6a4cff"} />
+          <Sparkles count={70} scale={[10, 6, 6]} size={2.2} speed={0.35} opacity={dark ? 0.6 : 0.35} color={dark ? "#e3cfa6" : "#8a6a3e"} />
           <Environment resolution={256} frames={1}>
-            <Lightformer form="rect" intensity={4} color="#2f6bff" position={[-5, 2, 3]} scale={[4, 6, 1]} />
-            <Lightformer form="rect" intensity={4} color="#ff3d8b" position={[5, -1, 3]} scale={[4, 6, 1]} />
-            <Lightformer form="ring" intensity={3} color="#8b3dff" position={[0, 4, -4]} scale={4} />
-            <Lightformer form="rect" intensity={2} color="#c6ff3d" position={[0, -5, 2]} scale={[8, 1, 1]} />
+            <Lightformer form="rect" intensity={4} color="#b89763" position={[-5, 2, 3]} scale={[4, 6, 1]} />
+            <Lightformer form="rect" intensity={4} color="#f3e6cc" position={[5, -1, 3]} scale={[4, 6, 1]} />
+            <Lightformer form="ring" intensity={3} color="#8a6a3e" position={[0, 4, -4]} scale={4} />
+            <Lightformer form="rect" intensity={2} color="#ffffff" position={[0, -5, 2]} scale={[8, 1, 1]} />
             <Lightformer form="rect" intensity={dark ? 1 : 3} color="#ffffff" position={[0, 0, 6]} scale={[6, 6, 1]} />
           </Environment>
           <Rig />

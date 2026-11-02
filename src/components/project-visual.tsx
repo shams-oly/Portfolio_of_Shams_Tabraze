@@ -25,13 +25,13 @@ export function ProjectVisual({
       );
     // Blurred backdrop + contained image: any aspect ratio looks intentional.
     return (
-      <div className={`relative h-full w-full overflow-hidden ${className}`} style={{ background: `${project.accent || "#8b3dff"}33` }}>
+      <div className={`relative h-full w-full overflow-hidden ${className}`} style={{ background: `${project.accent || "#8a6a3e"}33` }}>
         <Image src={project.cover} alt="" aria-hidden fill sizes="40px" className="scale-125 object-cover opacity-50 blur-2xl" />
         <Image src={project.cover} alt={project.title} fill sizes={sizes} priority={priority} className={fit === "cover" ? "object-cover" : "object-contain"} />
       </div>
     );
   }
-  const a = project.accent || "#8b3dff";
+  const a = project.accent || "#8a6a3e";
   return (
     <div
       className={`relative flex h-full w-full items-center justify-center overflow-hidden ${className}`}

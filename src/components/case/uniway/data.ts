@@ -61,11 +61,11 @@ export const stages = [
 
 /** Gantt rows: start/end in weeks (1–12). */
 export const timeline = [
-  { name: "Strategy", detail: "Topic selection, secondary research", start: 1, end: 2.5, color: "#2F6BFF" },
+  { name: "Strategy", detail: "Topic selection, secondary research", start: 1, end: 2.5, color: "#404040" },
   { name: "Empathize", detail: "Interviews, empathy maps, personas, user stories, journey maps", start: 1.5, end: 4.5, color: "#5B4DFF" },
-  { name: "Define", detail: "Problem & hypothesis statements, goal statement, crazy eights", start: 5, end: 7.5, color: "#8B3DFF" },
+  { name: "Define", detail: "Problem & hypothesis statements, goal statement, crazy eights", start: 5, end: 7.5, color: "#F37500" },
   { name: "Ideate", detail: "Value proposition, competitive analysis, user flow, site map", start: 6, end: 8.5, color: "#B83DFF" },
-  { name: "Test", detail: "Usability test, survey, affinity mapping", start: 9, end: 10.5, color: "#FF3D8B" },
+  { name: "Test", detail: "Usability test, survey, affinity mapping", start: 9, end: 10.5, color: "#E5484D" },
   { name: "Design", detail: "Lo-fi & mid-fi wireframes, usability testing, hi-fi design, presentation", start: 8, end: 12.5, color: "#E0457B" },
 ];
 
@@ -209,7 +209,7 @@ export const personas = [
       "Doesn't trust agencies",
       "No clear list of documents for a visa",
     ],
-    tone: "#FF3D8B",
+    tone: "#E5484D",
   },
   {
     name: "Nafee Ahmed",
@@ -232,7 +232,7 @@ export const personas = [
       "Unfamiliar with ECA event schedules",
       "No trusted platform that shortlists by qualification",
     ],
-    tone: "#2F6BFF",
+    tone: "#404040",
   },
 ];
 
